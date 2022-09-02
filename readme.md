@@ -1,5 +1,7 @@
 # Exemple idiot pour symfony 6
 
+![screen](screen.png)
+
 - Clonez le repo puis pensez à faire un `composer install`
 - Ajoutez un fichier `.env.local` et réglez vos informations de base de donnée
 - Assurez vous de bien avoir un docker ou une base de donnée installée localement.
