@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Toutes les notes{% endblock %}
+
+{% block body %}
+<div class="container bg-light">
+<h1>Toutes les notes</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Sujet</th>
+                <th>Contenu</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for note in notes %}
+            <tr>
+                <td>{{ note.sujet }}</td>
+                <td>{{ note.contenu }}</td>
+                <td>
+                    <a href="{{ path('app_note_show', {'id': note.id}) }}">show</a>
+                    <a href="{{ path('app_note_edit', {'id': note.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="4">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('app_note_new') }}">Create new</a>
+</div>
+    
+{% endblock %}

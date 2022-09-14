@@ -3,9 +3,10 @@
 namespace App\Controller;
 
 use App\Repository\NoteRepository;
-use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\IsGranted;
+use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 
 class OneController extends AbstractController
 {
@@ -16,7 +17,6 @@ class OneController extends AbstractController
     //         'controller_name' => 'Biloute',
     //     ]);
     // }
-
     #[Route('/', name:'les_notes')]
     public function bidule( NoteRepository $noteRepository): Response
     {
